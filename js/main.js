@@ -8,36 +8,45 @@ const secondsSpan = document.querySelector('.seconds .number');
 
 const setTimer = () => {
     var now = new Date().getTime();
-    var timeleft = countDownDate - now;
+
+    if(now > countDownDate){
+        daySpan.textContent = '00';
+        hoursSpan.textContent = '00';
+        minutesSpan.textContent = '00';
+        secondsSpan.textContent = '00';
+    }else{
+        var timeleft = countDownDate - now;
         
-    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-    if(days < 10){
-        daySpan.textContent = '0' + days;
-    }else{
-        daySpan.textContent = '0' + days; 
+        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+    
+        if(days < 10){
+            daySpan.textContent = '0' + days;
+        }else{
+            daySpan.textContent = days; 
+        }
+    
+        if(hours < 10){
+            hoursSpan.textContent = '0' + hours;
+        }else{
+            hoursSpan.textContent = hours; 
+        }
+    
+        if(minutes < 10){
+            minutesSpan.textContent = '0' + minutes;
+        }else{
+            minutesSpan.textContent =  minutes; 
+        }
+    
+        if(seconds < 10){
+            secondsSpan.textContent = '0' + seconds;
+        }else{
+            secondsSpan.textContent =  seconds; 
+        }
     }
-
-    if(hours < 10){
-        hoursSpan.textContent = '0' + hours;
-    }else{
-        hoursSpan.textContent = hours; 
-    }
-
-    if(minutes < 10){
-        minutesSpan.textContent = '0' + minutes;
-    }else{
-        minutesSpan.textContent =  minutes; 
-    }
-
-    if(seconds < 10){
-        secondsSpan.textContent = '0' + seconds;
-    }else{
-        secondsSpan.textContent =  seconds; 
-    }
+   
 }
 
 

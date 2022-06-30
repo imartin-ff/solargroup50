@@ -10,10 +10,7 @@ const setTimer = () => {
     var now = new Date().getTime();
 
     if(now > countDownDate){
-        daySpan.textContent = '00';
-        hoursSpan.textContent = '00';
-        minutesSpan.textContent = '00';
-        secondsSpan.textContent = '00';
+        document.querySelector('.timer').style.opacity = 0;
     }else{
         var timeleft = countDownDate - now;
         

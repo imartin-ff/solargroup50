@@ -73,3 +73,12 @@ document.querySelector('.copy-link a').addEventListener('click', function(e){
     navigator.clipboard.writeText(copyText.value);
 
 })
+
+const frame = document.querySelector('.video iframe');
+frame.style.display = 'none';
+document.querySelector('.play-btn').addEventListener('click', function(){
+    document.querySelector('.play-btn').style.display = 'none';
+    document.querySelector('.preview').style.display = 'none';
+    document.querySelector('.video iframe').style.display = 'block';
+    frame.setAttribute('src', frame.getAttribute('src') + "&autoplay=1");
+})

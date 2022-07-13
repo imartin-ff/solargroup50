@@ -223,6 +223,25 @@ body {
     min-width: 100%;
     margin-right: 0;
     margin-bottom: 20px;
+    height: auto;
+  }
+  .video-block .video iframe {
+    height: 400px;
+  }
+}
+@media (max-width: 580px) {
+  .video-block .video iframe {
+    height: 320px;
+  }
+}
+@media (max-width: 480px) {
+  .video-block .video iframe {
+    height: 250px;
+  }
+}
+@media (max-width: 400px) {
+  .video-block .video iframe {
+    height: 200px;
   }
 }
 .video-block .video img {
